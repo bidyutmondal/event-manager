@@ -2,13 +2,18 @@ const mongoose = require("mongoose");
 
 const eventSchema = new mongoose.Schema(
 	{
+		e_code: {
+			type: String,
+			required: true,
+			trim: true,
+		},
 		description: {
 			type: String,
 			required: true,
 			trim: true,
 		},
-		created_by: {
-			type: mongoose.Schema.Types.ObjectId,
+		owner: {
+			type: String,
 			required: true,
 			ref: "User",
 		},
